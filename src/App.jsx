@@ -1,12 +1,29 @@
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
-import About from "./About";
 
 function App() {
+  const [number, setNumber] = React.useState(0);
+
   return (
-    <div>
-      <About/>
-      <h1>Hello World</h1>
+    <div className="app">
+      <h1>Calculator</h1>
+      <h1>{number}</h1>
+      <button
+        onClick={() => {
+          setNumber(() => number + 1);
+        }}
+      >
+        +1
+      </button>
+      <br />
+      <br />
+      <button
+        onClick={() => {
+          setNumber(() => number - 1);
+        }}
+      >
+        -1
+      </button>
     </div>
   );
 }
